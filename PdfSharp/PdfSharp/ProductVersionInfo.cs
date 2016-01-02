@@ -103,12 +103,12 @@ namespace PdfSharp
     /// <summary>
     /// The minor version number of the product. Also used for NuGet Version.
     /// </summary>
-    public const string VersionMinor = "32";
+    public const string VersionMinor = "33";
 
     /// <summary>
     /// The build number of the product. Also used for NuGet Version.
     /// </summary>
-    public const string VersionBuild = "2608";  // Build = days since 2005-01-01  -  change this values ONLY HERE
+    public const string VersionBuild = "0";
 
     /// <summary>
     /// The patch number of the product. Also used for NuGet Version.
