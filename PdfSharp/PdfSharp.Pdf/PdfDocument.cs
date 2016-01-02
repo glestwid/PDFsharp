@@ -365,21 +365,13 @@ namespace PdfSharp.Pdf
     {
       PdfDocumentInformation info = Info;
 
+      // Set Producer if value is undefined
+      if (info.Elements[PdfDocumentInformation.Keys.Producer] == null)
+        info.Producer = VersionInfo.Producer;     
+
       // Set Creator if value is undefined
       if (info.Elements[PdfDocumentInformation.Keys.Creator] == null)
         info.Creator = VersionInfo.Producer;
-
-      // Keep original producer if file was imported
-      string producer = info.Producer;
-      if (producer.Length == 0)
-        producer = VersionInfo.Producer;
-      else
-      {
-        // Prevent endless concatenation if file is edited with PDFsharp more than once
-        if (!producer.StartsWith(VersionInfo.Title))
-          producer = VersionInfo.Producer + " (Original: " + producer + ")";
-      }
-      info.Elements.SetString(PdfDocumentInformation.Keys.Producer, producer);
 
       // Prepare used fonts
       if (this.fontTable != null)
