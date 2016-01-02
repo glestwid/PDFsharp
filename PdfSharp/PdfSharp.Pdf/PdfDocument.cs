@@ -369,9 +369,9 @@ namespace PdfSharp.Pdf
       if (info.Elements[PdfDocumentInformation.Keys.Producer] == null)
         info.Producer = VersionInfo.Producer;     
 
-      // Set Creator if value is undefined
-      if (info.Elements[PdfDocumentInformation.Keys.Creator] == null)
-        info.Creator = VersionInfo.Producer;
+      // Set Application if value is undefined
+      if (info.Elements[PdfDocumentInformation.Keys.Application] == null)
+        info.Application = VersionInfo.Producer;
 
       // Prepare used fonts
       if (this.fontTable != null)

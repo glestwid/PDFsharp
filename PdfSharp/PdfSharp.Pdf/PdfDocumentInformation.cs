@@ -95,10 +95,10 @@ namespace PdfSharp.Pdf
     /// <summary>
     /// Gets or sets the name of the application (for example, MigraDoc) that created the document.
     /// </summary>
-    public string Creator
+    public string Application
     {
-      get { return Elements.GetString(Keys.Creator); }
-      set { Elements.SetString(Keys.Creator, value); }
+      get { return Elements.GetString(Keys.Application); }
+      set { Elements.SetString(Keys.Application, value); }
     }
 
     /// <summary>
@@ -165,7 +165,7 @@ namespace PdfSharp.Pdf
       /// original document from which it was converted.
       /// </summary>
       [KeyInfo(KeyType.String | KeyType.Optional)]
-      public const string Creator = "/Creator";
+      public const string Application = "/Creator";
 
       /// <summary>
       /// (Optional) If the document was converted to PDF from another format,
