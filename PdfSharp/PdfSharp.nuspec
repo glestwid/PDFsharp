@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>2Toad, LLC</authors>
+    <owners>2Toad, LLC</owners>
+    <licenseUrl>https://github.com/2Toad/PDFsharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/2Toad/PDFsharp</projectUrl>
+	<requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A .NET library for processing PDF</description>
+    <copyright>Copyright (C)2015 2Toad, LLC</copyright>
+    <tags>PDF PDFsharp 2Toad</tags>
+  </metadata>
+</package>
