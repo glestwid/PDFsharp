@@ -772,7 +772,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="PdfSharp.SharpZipLib\ReadMe.txt" />
+    <None Include="PdfSharp.SharpZipLib\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PdfSharp.Forms\PagePreview.resx">
