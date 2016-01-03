@@ -1,3 +1,9 @@
+# 1.33.1
+
+## Fixes
+
+* **NuGet**: [NuGet package adds PdfSharp.SharpZipLib\ReadMe.txt to project](https://github.com/2Toad/PDFsharp/issues/9)
+
 # 1.33.0
 
 Switched to semantic versioning

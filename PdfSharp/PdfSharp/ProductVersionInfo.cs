@@ -108,7 +108,7 @@ namespace PdfSharp
     /// <summary>
     /// The build number of the product. Also used for NuGet Version.
     /// </summary>
-    public const string VersionBuild = "0";
+    public const string VersionBuild = "1";
 
     /// <summary>
     /// The patch number of the product. Also used for NuGet Version.
