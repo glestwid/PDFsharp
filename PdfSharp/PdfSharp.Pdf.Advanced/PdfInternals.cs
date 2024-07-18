@@ -45,9 +45,11 @@ namespace PdfSharp.Pdf.Advanced
   /// </summary>
   public class PdfInternals  // TODO: PdfDocumentInternals... PdfPageInterals etc.
   {
-    internal PdfInternals(PdfDocument document)
+    PdfWriterLayout layout;
+    internal PdfInternals(PdfDocument document, PdfWriterLayout layout)
     {
       this.document = document;
+      this.layout = layout;
     }
     PdfDocument document;
 
@@ -259,7 +261,7 @@ namespace PdfSharp.Pdf.Advanced
     public void WriteObject(Stream stream, PdfItem item)
     {
       // Never write an encrypted object
-      PdfWriter writer = new PdfWriter(stream, null);
+      PdfWriter writer = new PdfWriter(stream, null, layout);
       writer.Options = PdfWriterOptions.OmitStream;
       item.WriteObject(writer);
     }

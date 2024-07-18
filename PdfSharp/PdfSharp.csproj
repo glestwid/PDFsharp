@@ -772,6 +772,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="PdfSharp.SharpZipLib\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

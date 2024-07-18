@@ -37,10 +37,12 @@ namespace PdfSharp.Pdf
   /// Specifies the type of a key's value in a dictionary.
   /// </summary>
   [Flags]
-  internal enum KeyType
+  public enum KeyType
   {
-    Name = 0x00000001,
-    String = 0x00000002,
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+        Name = 0x00000001,
+
+        String = 0x00000002,
     Boolean = 0x00000003,
     Integer = 0x00000004,
     Real = 0x00000005,
@@ -69,14 +71,17 @@ namespace PdfSharp.Pdf
     Inheritable = 0x00000400,
     MustBeIndirect = 0x00001000,
     MustNotBeIndirect = 0x00002000,
-  }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+    }
 
-  /// <summary>
-  /// Summary description for KeyInfo.
-  /// </summary>
-  internal class KeyInfoAttribute : Attribute
+        /// <summary>
+        /// Summary description for KeyInfo.
+        /// </summary>
+  public class KeyInfoAttribute : Attribute
   {
-    public KeyInfoAttribute()
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
+        public KeyInfoAttribute()
     {
     }
 
@@ -133,5 +138,7 @@ namespace PdfSharp.Pdf
       set { this.fixedValue = value; }
     }
     string fixedValue;
-  }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+
+    }
 }

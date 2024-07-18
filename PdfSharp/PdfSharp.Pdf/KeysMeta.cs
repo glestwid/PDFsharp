@@ -39,13 +39,14 @@ namespace PdfSharp.Pdf
   /// Hold information about the value of a key in a dictionary. This information is used to create
   /// and interpret this value.
   /// </summary>
-  internal sealed class KeyDescriptor
+  public sealed class KeyDescriptor
   {
-    /// <summary>
-    /// Initializes a new instance of KeyDescriptor from the specified attribute during a KeysMeta
-    /// initializes itself using reflection.
-    /// </summary>
-    public KeyDescriptor(KeyInfoAttribute attribute)
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+        /// <summary>
+        /// Initializes a new instance of KeyDescriptor from the specified attribute during a KeysMeta
+        /// initializes itself using reflection.
+        /// </summary>
+        public KeyDescriptor(KeyInfoAttribute attribute)
     {
       this.version = attribute.Version;
       this.keyType = attribute.KeyType;
@@ -173,14 +174,16 @@ namespace PdfSharp.Pdf
       }
       return type;
     }
-  }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+    }
 
-  /// <summary>
-  /// Contains meta information about all keys of a PDF dictionary.
-  /// </summary>
-  internal class DictionaryMeta
+    /// <summary>
+    /// Contains meta information about all keys of a PDF dictionary.
+    /// </summary>
+    public class DictionaryMeta
   {
-    public DictionaryMeta(Type type)
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+        public DictionaryMeta(Type type)
     {
       FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy);
       foreach (FieldInfo field in fields)
@@ -202,5 +205,6 @@ namespace PdfSharp.Pdf
     }
 
     readonly Dictionary<string, KeyDescriptor> keyDescriptors = new Dictionary<string, KeyDescriptor>();
-  }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+    }
 }

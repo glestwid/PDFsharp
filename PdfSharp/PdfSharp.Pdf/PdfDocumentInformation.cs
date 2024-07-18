@@ -133,7 +133,7 @@ namespace PdfSharp.Pdf
     /// <summary>
     /// Predefined keys of this dictionary.
     /// </summary>
-    internal sealed class Keys : KeysBase
+    public sealed class Keys : KeysBase
     {
       /// <summary>
       /// (Optional; PDF 1.1) The document’s title.

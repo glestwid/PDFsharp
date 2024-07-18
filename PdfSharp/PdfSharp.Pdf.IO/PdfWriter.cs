@@ -46,14 +46,11 @@ namespace PdfSharp.Pdf.IO
   /// </summary>
   internal class PdfWriter
   {
-    public PdfWriter(Stream pdfStream, PdfStandardSecurityHandler securityHandler)
+    public PdfWriter(Stream pdfStream, PdfStandardSecurityHandler securityHandler, PdfWriterLayout layout = PdfWriterLayout.Verbose)
     {
       this.stream = pdfStream;
       this.securityHandler = securityHandler;
-      //System.Xml.XmlTextWriter
-#if DEBUG
-      layout = PdfWriterLayout.Verbose;
-#endif
+      this.layout = layout;
     }
 
     public void Close(bool closeUnderlyingStream)

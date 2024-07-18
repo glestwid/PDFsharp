@@ -224,7 +224,7 @@ namespace PdfSharp.Pdf
         if (SecuritySettings.DocumentSecurityLevel != PdfDocumentSecurityLevel.None)
           securityHandler = SecuritySettings.SecurityHandler;
 
-        PdfWriter writer = new PdfWriter(this.outStream, securityHandler);
+        PdfWriter writer = new PdfWriter(this.outStream, securityHandler, writerLayout);
         try
         {
           DoSave(writer);
@@ -266,7 +266,7 @@ namespace PdfSharp.Pdf
       if (SecuritySettings.DocumentSecurityLevel != PdfDocumentSecurityLevel.None)
         securityHandler = SecuritySettings.SecurityHandler;
 
-      PdfWriter writer = new PdfWriter(stream, securityHandler);
+      PdfWriter writer = new PdfWriter(stream, securityHandler, writerLayout);
       try
       {
         DoSave(writer);
@@ -737,16 +737,30 @@ namespace PdfSharp.Pdf
       get
       {
         if (this.internals == null)
-          this.internals = new PdfInternals(this);
+          this.internals = new PdfInternals(this, writerLayout);
         return this.internals;
       }
     }
     PdfInternals internals;
 
     /// <summary>
-    /// Creates a new page and adds it to this document.
+    /// Sets PdfWriterLayout allowing to eliminate excessive metadata to be placed in the file
     /// </summary>
-    public PdfPage AddPage()
+    public PdfWriterLayout PdfWriterLayout
+    {
+        get { return this.writerLayout; }
+        set { this.writerLayout = value; }
+    }
+#if DEBUG
+        PdfWriterLayout writerLayout = PdfWriterLayout.Verbose;
+#else
+        PdfWriterLayout layout;
+#endif
+
+        /// <summary>
+        /// Creates a new page and adds it to this document.
+        /// </summary>
+        public PdfPage AddPage()
     {
       if (!CanModify)
         throw new InvalidOperationException(PSSR.CannotModify);
